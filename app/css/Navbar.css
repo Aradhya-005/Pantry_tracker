@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+.navbar {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+  }
+  
+  .navbar-list {
+    background-color: transparent;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-item {
+    background-color: transparent;
+    margin: 0 1rem;
+  }
+  
+  .navbar-item a {
+    background-color: transparent;
+    color:rgb(159, 134, 192);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Unbounded';
+  }
+  
+  .navbar-item a:hover {
+    text-decoration: underline;
+  }
+  
+  h2{
+    font-family: 'Unbounded';
+    letter-spacing: 1px;
+    color: #E0B1CB;
+    font-weight: 700;
+    font-size: 28px;
+}
+p{
+  font-weight: 500;
+  font-family: 'Space Grotesk';
+  padding-top: 20px;
+  font-size: 16px;
+  color:  rgb(104, 104, 104);
+  gap: 20px;
+  line-height: 1.5em;
+ justify-content: center;
+  max-width: 440px;
+}
+
+input{
+  padding: 1px 25px;
+
+}
+
+button{
+  
+  font-size: 20px;
+  color: #b47cec;
+  justify-content: center;
+  font-family: 'Unbounded';
+  border:1px solid #242424;
+  padding: 5px 10px;
+}
+button i{
+  color: white;
+  margin-right: 12px;
+  font-size: 19px;
+}
+
+button:hover{
+  cursor: pointer;
+}
+.button-section{
+  padding: 50px;
+}

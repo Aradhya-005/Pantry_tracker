@@ -1,0 +1,31 @@
+/* chatbot.css */
+
+button {
+    background-color: #8e44ad; /* Purple background */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 15px 20px; /* Padding inside the button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  button:hover {
+    background-color: #732d91; /* Darker purple on hover */
+  }
+  
+  button:disabled {
+    background-color: #ccc; /* Grey background when disabled */
+    cursor: not-allowed; /* Disabled cursor when not allowed */
+  }
+
+  input{
+    border-radius: 4px;
+    caret-color: aliceblue;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 15px 10px;
+    width: 380px;
+    font-size: large;
+  }

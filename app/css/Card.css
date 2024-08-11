@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.container-1 {
+    width: 410px;
+    text-align: left;
+    background-color: #0d0d0d;
+    border-radius: 20px;
+    padding: 40px;
+    gap: 20px;
+    height: 230px;
+    justify-content: center;
+    align-items: center;
+  
+    
+}
+.container h3{
+    background-color: transparent;
+    font-size: 32px;
+    font-family: 'Unbounded';
+    line-height: 18px;
+    color: #BE95C4 ;
+}
+.container p{ 
+    padding-top: 20px;
+    background-color: transparent;
+    font-size: 14px;
+    font-family: 'Space Grotesk'; 
+    color: #BE95C4 ;
+}
+.text{
+    background-color: transparent;
+    justify-content: flex-end;
+    padding-top: 60px;
+}
+.image{
+    background-color:transparent;
+}
+.image{
+    background: transparent;
+}

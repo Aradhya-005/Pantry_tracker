@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+
+.Bottom_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.bottom_img{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+.bottom_img h3{
+    background-color: transparent;
+    font-size: 32px;
+    font-family: 'Unbounded';
+    line-height: 18px;
+    color: #9F86C0 ;
+}
+.bottom_img p{
+    padding-top: 20px;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: 'Space Grotesk'; 
+    color: #ffffff;
+}
+.img{
+    object-fit: cover;
+    border-radius: 40px;
+    filter: grayscale(100%);
+}
+
+.bottom_subscription {
+    padding: 100px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bottom_subscription h2 {
+    line-height: 1.5;
+    font-family: 'Unbounded';
+    color: #ffffff;
+    font-size: 48px;
+    margin-bottom: 20px; /* Adjust spacing between h2 and p */
+}
+
+.bottom_subscription p {
+    color: #E0B1CB;
+    font-size: 16px;
+    max-width: 500px;
+    text-align: center;
+    font-family: 'Space Grotesk';
+}
+
+.subscription_form {
+   margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+   
+    position: relative;
+}
+
+.email_input {
+   
+    padding: 15px 135px 15px 15px;
+    border-radius: 30px;
+    font-family: 'Space Grotesk';
+    background-color: #202020;
+    border: none;
+    /* border: 1px solid #ccc; */
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+    margin-right: -1px; /* Adjust margin to overlap the button */
+    z-index: 1; /* Ensure input is above button */
+}
+
+.email_input::placeholder {
+    color: #d4ace4;
+}
+.subscribe_button {
+    width: 120px;
+    height: 85%;
+    margin: 4px;
+    padding: 0px 5px 0px 5px;
+    border: none;
+    font-family: 'Space Grotesk';
+    border-radius:30px;
+    background-color: #8E7CC3; /* Adjust background color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    right: 0;
+    z-index: 2; /* Ensure button is above input */
+}
