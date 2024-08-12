@@ -133,7 +133,7 @@ export default function Home() {
             value={message}
             disabled={isLoading}
             onChange={handleChange}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyPress}
           />
           <button onClick={sendMessage} disabled={isLoading}>
             {isLoading ? "Sending..." : "Send"}
