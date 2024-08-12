@@ -1,5 +1,5 @@
 // app/dashboard/page.tsx
-"use client"
+"use client";
 import React, { useState } from 'react';
 
 interface SearchBarProps {
@@ -31,4 +31,17 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder, onSearch }) => {
   );
 };
 
-export default SearchBar;
+const DashboardPage: React.FC = () => {
+  const handleSearch = (query: string) => {
+    console.log('Search query:', query);
+  };
+
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <SearchBar placeholder="Search..." onSearch={handleSearch} />
+    </div>
+  );
+};
+
+export default DashboardPage;
