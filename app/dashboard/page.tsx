@@ -1,18 +1,33 @@
-import React from 'react'
-import SearchBar from '../components/SearchBar'
-import AddItemForm from '../components/AddItemForm';
+// src/components/SearchBar.tsx
+import React, { useState } from 'react';
 
-const page = () => {
-  const handleSearch = (query: string) => {
-    console.log('Searching for:', query);
-    // Implement your search logic here
-  };
-  return (
-   <>
-    <SearchBar placeholder="Search..." onSearch={handleSearch} />
-    <AddItemForm/>
-   </>
-  )
+interface SearchBarProps {
+  placeholder: string;
+  onSearch: (query: string) => void;
 }
 
-export default page
+const SearchBar: React.FC<SearchBarProps> = ({ placeholder, onSearch }) => {
+  const [query, setQuery] = useState('');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
+  };
+
+  const handleSearch = () => {
+    onSearch(query);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder={placeholder}
+        value={query}
+        onChange={handleChange}
+      />
+      <button onClick={handleSearch}>Search</button>
+    </div>
+  );
+};
+
+export default SearchBar;
