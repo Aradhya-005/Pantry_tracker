@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Stack } from "@mui/material";
-import { useState, useRef, useEffect, KeyboardEvent, ChangeEvent } from "react";
+import React, { useState, useRef, useEffect, KeyboardEvent, ChangeEvent } from "react"; // Import React explicitly
 import './chatbot.css';
 
 interface Message {
@@ -63,14 +63,14 @@ export default function Home() {
     }
   };
 
-  const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => { // Use React.KeyboardEvent
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       sendMessage();
     }
   };
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => { // Use React.ChangeEvent
     setMessage(event.target.value);
   };
 
