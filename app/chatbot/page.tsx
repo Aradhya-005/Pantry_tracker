@@ -8,6 +8,9 @@ interface Message {
   role: "assistant" | "user";
   content: string;
 }
+interface Item {
+  itemName: string;
+}
 
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([

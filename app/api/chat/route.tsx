@@ -3,6 +3,7 @@ import { collection, doc, getDoc, setDoc, updateDoc, deleteDoc, getDocs } from '
 import { db } from '@/auth/firebase';
 import type { NextRequest } from 'next/server';
 
+
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
@@ -16,7 +17,7 @@ export async function POST(req: NextRequest) {
       const itemCount = snapshot.size;
 
       if (itemCount > 0) {
-        const items = [];
+        const items: string[] = [];
         snapshot.forEach(doc => {
           const itemData = doc.data();
           const itemName = itemData.itemName || doc.id;
