@@ -61,12 +61,7 @@ const AddItemForm = () => {
     setFormVisible(!isFormVisible);
   };
 
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    handleSubmit();
-    toggleFormVisibility(); // Close form after submission
-  };
+ 
 
   const handleSubmit = async () => {
     try {
