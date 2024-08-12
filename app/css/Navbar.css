@@ -81,3 +81,10 @@ button:hover{
 .button-section{
   padding: 50px;
 }
+
+@media(max-width:400px){
+  .navbar{
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -48,3 +48,11 @@
 .image{
     background: transparent;
 }
+
+@media(max-width:450px){
+    .container{
+        max-width: 450px;
+       flex-direction: column;
+      
+    }
+}

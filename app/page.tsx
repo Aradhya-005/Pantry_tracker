@@ -11,7 +11,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 export default function Home() {
   return (
   <>
-   <HeroSection/>
+ 
+  <HeroSection/>
    <About/>
    <Cards/>
    <BottomContent/>
@@ -28,6 +29,8 @@ export default function Home() {
         <LottieFiles delay={0} /> 
         <LottieFiles delay={0} /> 
       </div>
+
+ 
    
   </>
   );

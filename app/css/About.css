@@ -89,3 +89,31 @@
    
     height: 168.8px;
 }
+
+@media(max-width:450px){
+    .welcome-section{
+        max-width: 450px;
+
+        flex-direction: column;
+      
+    }
+    .welcome-section p{
+        
+    }
+    .about-text {
+        order: 2; /* Ensure text comes after the image */
+        padding: 10px;
+      }
+    
+      .img {
+        width: 470px;
+        height: 480px;
+        object-fit: cover;
+        order: 1; /* Ensure the image comes first */
+      
+      }
+    .about-section{
+        max-width: 450px;
+        flex-direction: column;
+    }
+}

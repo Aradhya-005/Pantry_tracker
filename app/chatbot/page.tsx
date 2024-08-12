@@ -2,9 +2,8 @@
 
 import { Box, Button, Stack, TextField } from "@mui/material";
 import { useState, useRef, useEffect, KeyboardEvent, ChangeEvent } from "react";
-import './chatbot.css'
+import './chatbot.css';
 
-// Define types for the message structure
 interface Message {
   role: "assistant" | "user";
   content: string;
@@ -31,45 +30,37 @@ export default function Home() {
     ]);
 
     try {
+      setIsLoading(true);
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify([...messages, { role: "user", content: message }]),
+        body: JSON.stringify({ message }),
       });
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
-      const reader = response.body?.getReader();
-      const decoder = new TextDecoder();
+      const text = await response.text();
 
-      while (true) {
-        const { done, value } = await reader?.read() || { done: true, value: new Uint8Array() };
-        if (done) break;
-        const text = decoder.decode(value, { stream: true });
-        setMessages((prevMessages) => {
-          const lastMessage = prevMessages[prevMessages.length - 1];
-          const otherMessages = prevMessages.slice(0, prevMessages.length - 1);
-          return [
-            ...otherMessages,
-            { ...lastMessage, content: lastMessage.content + text },
-          ];
-        });
-      }
+      setMessages((prevMessages) => [
+        ...prevMessages.slice(0, -1), // Remove the last empty assistant message
+        { role: "assistant", content: text },
+      ]);
     } catch (error) {
       console.error("Error:", error);
       setMessages((prevMessages) => [
-        ...prevMessages,
+        ...prevMessages.slice(0, -1), // Remove the last empty assistant message
         {
           role: "assistant",
           content: "I'm sorry, but I encountered an error. Please try again later.",
         },
       ]);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   const handleKeyPress = (event: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -101,13 +92,13 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      bgcolor="#000"  // Set the background to black
+      bgcolor="#000"
     >
       <Stack
         direction={"column"}
         width="500px"
         height="700px"
-        border="1px solid #555"  // Grey border
+        border="1px solid #555"
         p={2}
         spacing={3}
       >
@@ -126,7 +117,7 @@ export default function Home() {
             >
               <Box
                 sx={{
-                  bgcolor: message.role === "assistant" ? "#3498db" : "#2ecc71", // Light Blue for assistant, Light Green for user
+                  bgcolor: message.role === "assistant" ? "#3498db" : "#2ecc71",
                   color: "white",
                   borderRadius: 3,
                   p: 2,
@@ -139,18 +130,12 @@ export default function Home() {
         </Stack>
         <Stack direction={"row"} spacing={2}>
           <input
-           label="Message"
-            fullWidth
             value={message}
             disabled={isLoading}
             onChange={handleChange}
-            onKeyPress={handleKeyPress}/>
-          <button
-        
-            onClick={sendMessage}
-            disabled={isLoading}
-          
-          >
+            onKeyPress={handleKeyPress}
+          />
+          <button onClick={sendMessage} disabled={isLoading}>
             {isLoading ? "Sending..." : "Send"}
           </button>
         </Stack>

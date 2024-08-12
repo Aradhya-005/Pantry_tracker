@@ -36,3 +36,21 @@ h1 {
   text-transform: uppercase;
   margin: 0;
 }
+@media(max-width:450px){
+  .hero-section {
+    max-width: 450px;
+
+  }
+  
+  .hero-text {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 48px; /* Adjust font size for smaller screens */
+  }
+  
+
+}

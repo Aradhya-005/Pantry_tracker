@@ -110,3 +110,10 @@
     right: 0;
     z-index: 2; /* Ensure button is above input */
 }
+
+@media(max-width:450px){
+    .bottom_img{
+        max-width: 450px;
+        flex-direction: column;
+    }
+}
