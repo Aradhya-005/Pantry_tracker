@@ -1,4 +1,4 @@
-// src/components/SearchBar.tsx
+"use client"
 import React, { useState } from 'react';
 
 interface SearchBarProps {
