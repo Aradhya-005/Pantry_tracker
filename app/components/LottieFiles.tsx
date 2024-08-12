@@ -18,7 +18,7 @@ function LottieFiles() {  // Add a delay prop
     });
 
     return () => clearTimeout(timer);  // Clean up the timeout on unmount
-  }, [delay]);
+  });
 
   if (!animationData) {
     return <div>Loading...</div>;
