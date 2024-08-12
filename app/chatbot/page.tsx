@@ -1,15 +1,12 @@
 "use client";
 
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { useState, useRef, useEffect, KeyboardEvent, ChangeEvent } from "react";
 import './chatbot.css';
 
 interface Message {
   role: "assistant" | "user";
   content: string;
-}
-interface Item {
-  itemName: string;
 }
 
 export default function Home() {
@@ -66,7 +63,7 @@ export default function Home() {
     }
   };
 
-  const handleKeyPress = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       sendMessage();
