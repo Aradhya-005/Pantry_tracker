@@ -4,10 +4,11 @@ import Cards from "./components/Cards";
 import HeroSection from "./components/HeroSection";
 import LottieFiles from "./components/LottieFiles";
 
+
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <HeroSection/>
       <About />
       <Cards />
       <BottomContent />
