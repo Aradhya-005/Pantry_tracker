@@ -1,6 +1,4 @@
 
-
-
 .container{
     display: flex;
     flex-direction: row;
@@ -50,6 +48,7 @@
 
 @media(max-width:450px){
     .container{
+        margin-left: 28%;
         max-width: 450px;
        flex-direction: column;
       

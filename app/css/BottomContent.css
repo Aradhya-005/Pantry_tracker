@@ -111,7 +111,11 @@
 
 @media(max-width:450px){
     .bottom_img{
+        margin-left: 29%;
         max-width: 450px;
         flex-direction: column;
+    }
+    .bottom_subscription{
+        margin-left: 29%;
     }
 }

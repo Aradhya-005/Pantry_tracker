@@ -14,7 +14,8 @@ export default function Home() {
    <About/>
    <Cards/>
    <BottomContent/>
-   <div style={{ 
+   <div className="bottom-animation" style={{ 
+      
         display: 'flex', 
         flexDirection: 'row', 
         justifyContent: 'center', 
