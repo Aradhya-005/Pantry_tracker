@@ -45,18 +45,18 @@ p{
 }
 @media(max-width:450px){
   .bottom-animation{
-    margin-left: 24%;
+    /* margin-left: 24%; */
     margin-bottom: -118px;
   }
   .bottom-animation .animation:nth-child(3) {
     display: none;
   }
-  .bottom-animation .animation:nth-child(2) {
+  /* .bottom-animation .animation:nth-child(2) {
     display: none;
-  }
+  } */
 
   .footer{
-    margin-top: 29%;
-    margin-left: 24%;
+    margin-top: 32%;
+    /* margin-left: 20%; */
   }
 }
