@@ -126,4 +126,7 @@
         height: 410px;
         object-fit: cover;
     }
+    .section{
+        margin-left: 25%;
+    }
 }
