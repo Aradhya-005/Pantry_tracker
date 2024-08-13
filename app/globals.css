@@ -45,12 +45,13 @@ p{
 }
 @media(max-width:450px){
   .bottom-animation{
-    /* margin-left: 24%; */
-    margin-bottom: -118px;
+    width: 136%;
+    margin-top: 36px;
+    margin-bottom: -124px;
   }
-  .bottom-animation .animation:nth-child(3) {
+  /* .bottom-animation .animation:nth-child(3) {
     display: none;
-  }
+  } */
   /* .bottom-animation .animation:nth-child(2) {
     display: none;
   } */
