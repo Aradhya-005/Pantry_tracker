@@ -95,7 +95,15 @@
         flex-direction: column;
       
     }
-   
+    .text {
+        order: 1; /* Text comes first in column layout */
+        margin-bottom: 20px; /* Space between text and image in column layout */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .welcome-image {
+        order: 2; /* Image comes after text in column layout */
+    }
     .about-text {
         order: 2; /* Ensure text comes after the image */
         padding: 10px;
@@ -109,7 +117,13 @@
       
       }
     .about-section{
+        padding-bottom: 90px;
         max-width: 450px;
         flex-direction: column;
+    }
+    .img{
+        width: 400px;
+        height: 410px;
+        object-fit: cover;
     }
 }

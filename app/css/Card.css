@@ -48,7 +48,7 @@
 
 @media(max-width:450px){
     .container{
-        margin-left: 28%;
+        margin-left: 35%;
         max-width: 450px;
        flex-direction: column;
       
