@@ -115,8 +115,18 @@
         max-width: 450px;
         flex-direction: column;
     }
+    .bottom_img p{
+        font-size: 18px;
+    }
     .bottom_subscription{
         margin-left: 29%;
+        text-align: left;
+        margin-bottom: -82px;
+    }
+    .bottom_subscription p{
+        font-size: 18px;
+        text-align: left;
+        padding-bottom: 22px;
     }
     .box-1{
         padding-bottom: 90px;

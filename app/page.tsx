@@ -24,7 +24,7 @@ export default function Home() {
         overflow: 'hidden',
         opacity:'0.6'
       }}>
-        <LottieFiles  />   
+        <LottieFiles   />   
         <LottieFiles  />   
         <LottieFiles  />   
        

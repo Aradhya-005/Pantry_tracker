@@ -91,9 +91,13 @@
 @media(max-width:450px){
     .welcome-section{
         max-width: 450px;
-        margin-left: 28%;
+        margin-left: 3%;
         flex-direction: column;
+        margin-bottom: -64px;
       
+    }
+    .welcome-section p{
+        font-size: 21px;
     }
     .text {
         order: 1; /* Text comes first in column layout */
@@ -127,6 +131,6 @@
         object-fit: cover;
     }
     .section{
-        margin-left: -6%;
+        margin-left: -13%;
     }
 }

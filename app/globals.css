@@ -22,5 +22,7 @@ p{
   .bottom-animation{
     margin-left: 21%;
   }
-  
+  .bottom-animation .animation:nth-child(3) {
+    display: none;
+  }
 }
