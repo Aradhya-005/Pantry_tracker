@@ -1,5 +1,4 @@
 
-
 .welcome-section {
     display: flex;
 
@@ -92,7 +91,7 @@
 @media(max-width:450px){
     .welcome-section{
         max-width: 450px;
-
+        margin-left: 25%;
         flex-direction: column;
       
     }
