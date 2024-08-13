@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     if (userMessage.includes("how many items") || userMessage.includes("tell the items present")) {
       const snapshot = await getDocs(pantryCollection);
       const itemCount = snapshot.size;
-
+      
       if (itemCount > 0) {
         const items: string[] = [];
         snapshot.forEach(doc => {

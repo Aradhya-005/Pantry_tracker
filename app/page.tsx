@@ -24,8 +24,9 @@ export default function Home() {
         opacity:'0.6'
       }}>
         <LottieFiles  />   
-        <LottieFiles  /> 
-        <LottieFiles /> 
+        <LottieFiles  />   
+        <LottieFiles  />   
+       
       </div>
 
  

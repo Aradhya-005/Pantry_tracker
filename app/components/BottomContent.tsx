@@ -44,6 +44,7 @@ function BottomContent() {
           </p>
           <div className="subscription_form">
             <input
+               id="email_id"
               type="email"
               placeholder="name@email.com"
               className="email_input"

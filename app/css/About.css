@@ -97,9 +97,7 @@
         flex-direction: column;
       
     }
-    .welcome-section p{
-        
-    }
+   
     .about-text {
         order: 2; /* Ensure text comes after the image */
         padding: 10px;
