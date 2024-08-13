@@ -20,8 +20,7 @@ function LottieFiles() {
     return <div>Loading...</div>;
   }
   return (
-    <div className='lottie-animation'>
-      
+    <div className='lottie-animation'> 
         <Lottie
           animationData={animationData}
           loop={true}
