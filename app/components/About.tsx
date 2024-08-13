@@ -2,11 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
-import celebration from '@/public/assets/celebration.svg'
 import Grocery from '@/public/assets/grocery.jpg'
 import Bottle from '@/public/assets/bottle.jpeg'
-import Box from '@/public/assets/box.jpg'
-import Packet  from '@/public/assets/packet.jpg'
+
 import '../css/About.css'
 import Lottie from 'lottie-react';// import squibble_1 from '@/public/assets/squibble.jpg';
 
