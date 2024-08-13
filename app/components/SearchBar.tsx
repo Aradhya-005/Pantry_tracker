@@ -1,13 +1,22 @@
 import React from 'react';
 import '../css/SearchBar.css'; // Import the CSS file
+   
+interface SearchBarProps {
+  placeholder?: string;
+  onSearch?: (query: string) => void;
+}
 
-const SearchBar = () => {
+const SearchBar: React.FC<SearchBarProps> = ({ placeholder = 'enter item'}) => {
+  
+
+  
+
   return (
     <div className="search-bar">
       <input
         type="text"
         className="search-input"
-        placeholder="enter item"
+        placeholder={placeholder}
         
       />
       <button className="search-button" >

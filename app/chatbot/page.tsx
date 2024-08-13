@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Stack } from "@mui/material";
-import React, { useState, useRef, useEffect, KeyboardEvent, ChangeEvent } from "react"; // Import React explicitly
+import React, { useState, useRef, useEffect } from "react"; // Import React explicitly
 import './chatbot.css';
 
 interface Message {

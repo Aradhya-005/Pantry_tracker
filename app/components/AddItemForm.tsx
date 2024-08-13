@@ -90,7 +90,6 @@ const AddItemForm = () => {
       console.error("Error adding item: ", error);
     }
   };
-
   const fetchItems = async () => {
     try {
       const querySnapshot = await getDocs(collection(db, "pantryItems"));
@@ -98,12 +97,13 @@ const AddItemForm = () => {
         id: doc.id,
         ...doc.data(),
       })) as PantryItem[];
+      console.log(itemsList); // Debugging line
       setItems(itemsList);
     } catch (error) {
       console.error("Error fetching items: ", error);
     }
   };
-
+  
   useEffect(() => {
     fetchItems();
   }, []);
