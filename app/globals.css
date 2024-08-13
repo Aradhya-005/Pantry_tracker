@@ -18,11 +18,45 @@ p{
   font-family: 'Space Grotesk';
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #333;
+
+}
+
+.copyright p {
+  margin: 0;
+  font-family: 'Space Grotesk'; /* Font style for the copyright text */
+  font-size: 14px;
+  color: #333; /* Text color */
+}
+.bottom-animation{
+ 
+  display: flex;
+  flex-direction: row;
+}
+.animation{
+ justify-content: center; 
+  overflow: hidden;
+  opacity:0.6;
+}
 @media(max-width:450px){
   .bottom-animation{
-    margin-left: 21%;
+    margin-left: 24%;
+    margin-bottom: -118px;
   }
   .bottom-animation .animation:nth-child(3) {
     display: none;
+  }
+  .bottom-animation .animation:nth-child(2) {
+    display: none;
+  }
+
+  .footer{
+    margin-top: 29%;
+    margin-left: 24%;
   }
 }

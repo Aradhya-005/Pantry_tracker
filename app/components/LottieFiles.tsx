@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 
+
 function LottieFiles() {
   const [animationData, setAnimationData] = useState(null);
   const animationDataUrl = 'https://lottie.host/52b0503a-e05d-4431-a4dd-fa300af768e8/z9Q9SqtW7d.json';
@@ -19,11 +20,7 @@ function LottieFiles() {
     return <div>Loading...</div>;
   }
   return (
-    <div style={{ 
-      width: '30%', 
-      height: '100%', 
-      overflow: 'hidden',
-    }}>
+    <div className='lottie-animation'>
       
         <Lottie
           animationData={animationData}
