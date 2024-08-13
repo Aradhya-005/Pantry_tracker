@@ -38,3 +38,9 @@
   .search-bar:hover{
     cursor: pointer;
   }
+
+  @media(max-width:450px){
+   .search-bar{
+    margin: 76px 9%;
+   }
+  }

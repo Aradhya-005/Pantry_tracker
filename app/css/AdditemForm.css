@@ -1,5 +1,4 @@
 
-
 input, button {
     font-family: 'Space Grotesk', sans-serif;
 }
@@ -99,11 +98,21 @@ form {
 .delete-content-button-1{
   margin-right: 10px;
 }
+.items-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
+    .tooltiptext {
+        width: 100px; /* Smaller width for smaller screens */
+        bottom: 150%; /* Adjust as needed */
+      }
     form {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
+        flex-direction: column;
+       
     }
     
     input {

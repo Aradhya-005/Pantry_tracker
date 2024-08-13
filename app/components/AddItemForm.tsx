@@ -16,6 +16,7 @@ import {
 import { db } from "@/auth/firebase"; // Ensure this path is correct
 import "../css/AdditemForm.css"; // Ensure you have the necessary CSS
 import {
+  Box,
   Table,
   TableBody,
   TableCell,
@@ -52,14 +53,6 @@ const AddItemForm = () => {
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const [itemToDelete, setItemToDelete] = useState<string | null>(null);
 
-
-
-
-  // Hook for navigation
-
-  const toggleFormVisibility = () => {
-    setFormVisible(!isFormVisible);
-  };
 
  
 
@@ -157,7 +150,7 @@ const AddItemForm = () => {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      className="items-section"
     >
       <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
         <div className="tooltip">
@@ -229,136 +222,88 @@ const AddItemForm = () => {
           border: "1px solid grey",
         }}
       >
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell   align="center"
+       <Box sx={{ overflowX: 'auto' }}>
+    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <TableHead>
+        <TableRow>
+          <TableCell align="center" sx={{ color: "#d7b4fb", fontFamily: "Space Grotesk", fontSize: "20px" }}>
+            Item Name
+          </TableCell>
+          <TableCell align="center" sx={{ color: "#d7b4fb", fontFamily: "Space Grotesk", fontSize: "20px" }}>
+            Quantity
+          </TableCell>
+          <TableCell align="center" sx={{ color: "#d7b4fb", fontFamily: "Space Grotesk", fontSize: "20px" }}>
+            Price
+          </TableCell>
+          <TableCell align="center" sx={{ color: "#d7b4fb", fontFamily: "Space Grotesk", fontSize: "20px" }}>
+            Category
+          </TableCell>
+          <TableCell align="center" sx={{ color: "#d7b4fb", fontFamily: "Space Grotesk", fontSize: "20px" }}>
+            Expiry Date
+          </TableCell>
+          <TableCell align="center" sx={{ color: "#d7b4fb", fontFamily: "Space Grotesk", fontSize: "20px" }}>
+            Added Date
+          </TableCell>
+          <TableCell align="center" sx={{ color: "#d7b4fb", fontFamily: "Space Grotesk", fontSize: "20px" }}>
+            Actions
+          </TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {items.map((item) => (
+          <TableRow key={item.id}>
+            <TableCell align="left" sx={{ color: "white", fontFamily: "Space Grotesk", fontSize: "15px" }} component="th" scope="row">
+              {item.itemName}
+            </TableCell>
+            <TableCell align="center" sx={{ color: "white", fontFamily: "Space Grotesk", fontSize: "15px" }}>
+              {item.quantity}
+            </TableCell>
+            <TableCell align="center" sx={{ color: "white", fontFamily: "Space Grotesk", fontSize: "15px" }}>
+              ${item.price}
+            </TableCell>
+            <TableCell align="center" sx={{ color: "white", fontFamily: "Space Grotesk", fontSize: "15px" }}>
+              {item.category}
+            </TableCell>
+            <TableCell align="center" sx={{ color: "white", fontFamily: "Space Grotesk", fontSize: "15px" }}>
+              {formatDate(item.expiryDate)}
+            </TableCell>
+            <TableCell align="center" sx={{ color: "white", fontFamily: "Space Grotesk", fontSize: "15px" }}>
+              {formatDate(item.addedDate)}
+            </TableCell>
+            <TableCell align="center" sx={{ color: "white", fontFamily: "Space Grotesk", fontSize: "15px" }}>
+              <EditOutlinedIcon
                 sx={{
-                  color: "#d7b4fb",
-                  fontFamily: "Space Grotesk",
-                  fontSize: "20px",
-                }} >Item Name</TableCell>
-              <TableCell   align="center"
+                  color: "#ffff",
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "#6a6868",
+                  },
+                  marginRight: '8px',
+                }}
+                onClick={() => {
+                  setEditingItem(item);
+                  setEditModalOpen(true);
+                }}
+              />
+              <DeleteOutlineOutlinedIcon
                 sx={{
-                  color: "#d7b4fb",
-                  fontFamily: "Space Grotesk",
-                  fontSize: "20px",
-                }}>Quantity</TableCell>
-              <TableCell   align="center"
-                sx={{
-                  color: "#d7b4fb",
-                  fontFamily: "Space Grotesk",
-                  fontSize: "20px",
-                }}>Price</TableCell>
-              <TableCell   align="center"
-                sx={{
-                  color: "#d7b4fb",
-                  fontFamily: "Space Grotesk",
-                  fontSize: "20px",
-                }}>Category</TableCell>
-              <TableCell   align="center"
-                sx={{
-                  color: "#d7b4fb",
-                  fontFamily: "Space Grotesk",
-                  fontSize: "20px",
-                }}>Expiry Date</TableCell>
-              <TableCell   align="center"
-                sx={{
-                  color: "#d7b4fb",
-                  fontFamily: "Space Grotesk",
-                  fontSize: "20px",
-                }}>Added Date</TableCell>
-              <TableCell   align="center"
-                sx={{
-                  color: "#d7b4fb",
-                  fontFamily: "Space Grotesk",
-                  fontSize: "20px",
-                }}>Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {items.map((item) => (
-              <TableRow key={item.id}>
-                <TableCell  align="left"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Space Grotesk",
-                      fontSize: "15px",
-                    }} component="th" scope="row">
-                  {item.itemName}
-                </TableCell>
-                <TableCell   align="center"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Space Grotesk",
-                      fontSize: "15px",
-                    }}>{item.quantity}</TableCell>
-                <TableCell   align="center"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Space Grotesk",
-                      fontSize: "15px",
-                    }}>${item.price}</TableCell>
-                <TableCell align="center"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Space Grotesk",
-                      fontSize: "15px",
-                    }} >{item.category}</TableCell>
-                <TableCell  align="center"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Space Grotesk",
-                      fontSize: "15px",
-                    }} >
-                  {formatDate(item.expiryDate)}
-                </TableCell>
-                <TableCell   align="center"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Space Grotesk",
-                      fontSize: "15px",
-                    }}>{formatDate(item.addedDate)}</TableCell>
-                <TableCell   align="center"
-                    sx={{
-                      color: "white",
-                      fontFamily: "Space Grotesk",
-                      fontSize: "15px",
-                    }}>
-                  <EditOutlinedIcon
-                     sx={{
-                      color: "#ffff",
-                      cursor: "pointer",
-                      "&:hover": {
-                        color: "#6a6868",
-                      },
-                      marginRight:'8px'
-                    }}
-                    onClick={() => {
-                      setEditingItem(item);
-                      setEditModalOpen(true);
-                    }}
-                  
-                  />
-                  <DeleteOutlineOutlinedIcon
-                     sx={{
-                      color: "#ffff",
-                      cursor: "pointer",
-                      "&:hover": {
-                        color: "#6a6868",
-                      },
-                    }}
-                    onClick={() => {
-                      setItemToDelete(item.id);
-                      setDeleteModalOpen(true);
-                    }}
-                    
-                  />
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+                  color: "#ffff",
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "#6a6868",
+                  },
+                }}
+                onClick={() => {
+                  setItemToDelete(item.id);
+                  setDeleteModalOpen(true);
+                }}
+              />
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  </Box>
       </TableContainer>
 
       {/* Update Modal */}
@@ -387,8 +332,7 @@ const AddItemForm = () => {
                 setEditingItem({ ...editingItem, quantity: Number(e.target.value) })
               }
               placeholder="Quantity"
-              min="1"
-              required
+              
             />
             <input
               type="number"
@@ -397,8 +341,7 @@ const AddItemForm = () => {
                 setEditingItem({ ...editingItem, price: Number(e.target.value) })
               }
               placeholder="Price"
-              min="0"
-              required
+              
             />
             <select
               value={editingItem.category}
