@@ -31,7 +31,7 @@ const About = () => {
      <div className='welcome-section'>
        <div className='welcome-image'> 
         <Lottie
-        className="hero-image"
+        className="welcome-image"
         animationData={animationData}
         loop={true}
         autoplay={true}
