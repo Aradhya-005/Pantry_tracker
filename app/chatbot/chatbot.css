@@ -29,3 +29,24 @@ button {
     width: 380px;
     font-size: large;
   }
+ .chatbox{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background-color:#000;
+ }
+  .content-chatbox{
+    flex-direction: column;
+    width: 403px;
+    height: 700px;
+    border:1px solid #555;
+  }
+  @media(max-width:450px){
+    .content-chatbox{
+      border: none;
+    }
+  }
+  

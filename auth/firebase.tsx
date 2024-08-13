@@ -5,7 +5,7 @@ import { getFirestore } from 'firebase/firestore';
 
 // Get Firebase configuration from environment variables
 const firebaseConfig = {
-  apiKey: `${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
@@ -25,6 +25,7 @@ const signInWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
     console.log('User info:', user);
+    // You can add additional logic here, such as saving user info to your database.
   } catch (error) {
     console.error('Error signing in with Google:', error);
   }

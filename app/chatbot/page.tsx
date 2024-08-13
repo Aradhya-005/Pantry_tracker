@@ -86,19 +86,11 @@ export default function Home() {
 
   return (
     <Box
-      width="100vw"
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      bgcolor="#000"
+    className="chatbox"
+     
     >
       <Stack
-        direction={"column"}
-        width="500px"
-        height="700px"
-        border="1px solid #555"
+       className="content-chatbox"
         p={2}
         spacing={3}
       >
