@@ -15,7 +15,7 @@ Welcome to the **Pantry Tracker** web app! This application allows users to effi
 <br>
 
 ## Live demo
-[**Pantry Tracker Live App**](https://pantry-tracker-g68n1kpeb-aradhyas-projects-75698cbd.vercel.app/)
+[**Pantry Tracker Live App**](https://pantry-tracker-mu-opal.vercel.app/)
 
 <br>
 
